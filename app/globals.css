@@ -59,7 +59,7 @@
 }
 
 .hero__image-overlay {
-  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4   -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
 }
 /* END: Hero styles */
 
@@ -87,8 +87,8 @@
 /* END: Home styles */
 
 /* START: Car Card styles */
-.car-card {
-  @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+.category-card {
+  @apply flex flex-col p-6 justify-center items-center text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
 }
 
 .car-card__content {
@@ -206,9 +206,12 @@
 }
 
 .search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-2 p-4 rounded-md max-sm:rounded-full bg-green-50 outline-none cursor-pointer text-sm;
 }
 
+.search-manufacturer__textarea {
+  @apply w-full h-32 pl-2 p-4 rounded-md max-sm:rounded-full bg-green-50 outline-none cursor-pointer text-sm;
+}
 .search-manufacturer__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }

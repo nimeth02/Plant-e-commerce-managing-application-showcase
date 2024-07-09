@@ -1,4 +1,5 @@
 import { CarProps, FilterProps } from "@types";
+import axios from "axios";
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
@@ -51,15 +52,16 @@ export async function fetchCars(filters: FilterProps) {
   };
 
   // Set the required headers for the API request
-  const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
-    {
-      headers: headers,
-    }
-  );
+  // const response = await fetch(
+  //   `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+  //   {
+  //     headers: headers,
+  //   }
+  // );
 
   // Parse the response as JSON
-  const result = await response.json();
+  // const result = await response.json();
+  let result
 
   return result;
 }
@@ -78,3 +80,25 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 } 
+
+
+export const axiosInstance = axios.create({
+  baseURL: 'http://localhost:5000',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+// Add a request interceptor to include the token in the headers
+axiosInstance.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);

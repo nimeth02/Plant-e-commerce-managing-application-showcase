@@ -14,7 +14,33 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+export interface IUser {
+  userName:string;
+  password:string
+}
 
+
+
+export interface ICategory {
+  id?:string;
+  name:string;
+  description:string
+  imageUrl:string
+}
+
+export interface IItem {
+  id?:string;
+  name:string;
+  subName:string;
+  description:string;
+  category:string;
+  categoryName:string;
+  quantity:string;
+  unitPrice:string;
+  newReleased:boolean,
+  bestSelling:boolean,
+  imageUrl:string[]
+}
 export interface FilterProps {
   manufacturer?: string;
   year?: number;

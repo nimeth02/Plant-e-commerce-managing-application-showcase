@@ -13,7 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className='relative'>
         <NavBar />
         {children}
+        <div id="about">
         <Footer />
+        </div>
       </body>
     </html>
   );

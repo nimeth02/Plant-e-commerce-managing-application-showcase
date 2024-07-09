@@ -1,4 +1,4 @@
-import CarCard from "./CarCard";
+import CarCard from "./CategoryCard";
 import CustomButton from "./CustomButton";
 import CustomFilter from "./CustomFilter";
 import Footer from "./Footer";
